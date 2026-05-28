@@ -26,7 +26,7 @@ I am a passionate **Robotics and AI Engineer** specializing in mechatronics, aut
     <td width="33%" valign="top">
       <h4>🧠 Robotics & SLAM</h4>
       <ul>
-        <li><b>Middleware:</b> ROS2 (Humble/Jazzy), ROS1</li>
+        <li><b>Middleware:</b> ROS2 (Humble/Jazzy)</li>
         <li><b>Navigation:</b> Nav2, MoveIt2, Cartographer SLAM</li>
         <li><b>Simulation:</b> Gazebo, RViz, URDF Modelling</li>
         <li><b>Sensors:</b> LiDAR, IMU, Depth Cameras, Ultrasonic</li>
@@ -35,8 +35,8 @@ I am a passionate **Robotics and AI Engineer** specializing in mechatronics, aut
     <td width="33%" valign="top">
       <h4>⚡ Hardware & Controls</h4>
       <ul>
-        <li><b>CAD/DFM:</b> SolidWorks, Fusion360, 3D Printing</li>
-        <li><b>FEA:</b> Ansys Structural, SolidWorks Simulation</li>
+        <li><b>CAD/DFM:</b> SolidWorks, 3D Printing</li>
+        <li><b>FEA:</b>SolidWorks Simulation</li>
         <li><b>MCUs:</b> STM32, ESP32, Arduino, Raspberry Pi</li>
         <li><b>Control:</b> Kinematics, PID Tuning, Sensor Fusion</li>
       </ul>
@@ -45,6 +45,7 @@ I am a passionate **Robotics and AI Engineer** specializing in mechatronics, aut
       <h4>💻 Software & Protocols</h4>
       <ul>
         <li><b>Languages:</b> C++, Python, Embedded C/C++</li>
+        <li><b>Automation:</b> n8n , vibe coding</li>
         <li><b>IoT:</b> ESP8266 WiFi, WebSocket, MQTT, HTTP</li>
         <li><b>Version Control:</b> Git, GitHub, CI/CD Actions</li>
         <li><b>Web Stack:</b> Next.js, Three.js, Tailwind CSS, GSAP</li>
