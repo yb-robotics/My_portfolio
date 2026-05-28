@@ -1,0 +1,500 @@
+/* E:\portfolio_site\src\components\SimulationLab.module.css */
+
+.sectionContainer {
+  position: relative;
+  background-color: #08080c;
+  padding: 8rem 8% 8rem 8%;
+  z-index: 4;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+}
+
+.sectionHeader {
+  margin-bottom: 4rem;
+}
+
+.subtitleCode {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: #00d4ff; /* Electric blue */
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.titleLarge {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* 3-Column Dashboard Grid Layout */
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1.1fr;
+  gap: 2rem;
+  width: 100%;
+  height: 600px;
+}
+
+@media (max-width: 1200px) {
+  .dashboardGrid {
+    grid-template-columns: 1.2fr 1.8fr;
+    height: auto;
+  }
+  /* Push terminal below */
+  .dashboardGrid > div:nth-child(3) {
+    grid-column: span 2;
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboardGrid {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  .dashboardGrid > div:nth-child(1),
+  .dashboardGrid > div:nth-child(2),
+  .dashboardGrid > div:nth-child(3) {
+    grid-column: span 1;
+  }
+  .canvasPanel {
+    height: 400px;
+  }
+}
+
+/* Dashboard Panels */
+.dashboardPanel {
+  background: rgba(10, 10, 15, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 
+    0 10px 30px -10px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.panelHeader {
+  height: 48px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.panelIconBlue {
+  color: #00d4ff;
+  filter: drop-shadow(0 0 4px rgba(0, 212, 255, 0.4));
+}
+
+.panelIconGreen {
+  color: #00ff88;
+  filter: drop-shadow(0 0 4px rgba(0, 255, 136, 0.4));
+}
+
+.panelTitle {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.statusPill {
+  margin-left: auto;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #00ff88;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 255, 136, 0.06);
+  padding: 2px 8px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 255, 136, 0.15);
+}
+
+.statusPulse {
+  width: 6px;
+  height: 6px;
+  background-color: #00ff88;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00ff88;
+  animation: pulseLight 1.8s infinite ease-in-out;
+}
+
+@keyframes pulseLight {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
+  }
+}
+
+.panelBody {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow-y: auto;
+}
+
+/* Joint Sliders */
+.telemetryGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.groupHeader {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.45);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+  padding-bottom: 6px;
+}
+
+.jointRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.jointLabel {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #00d4ff;
+  width: 24px;
+}
+
+.barContainer {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.barFill {
+  height: 100%;
+  background: linear-gradient(90deg, #00d4ff, #00ff88);
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
+  border-radius: 3px;
+}
+
+.jointValue {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+  width: 60px;
+  text-align: right;
+}
+
+/* Vector Position Coordinates */
+.vectorTelemetry {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.vectorGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.vectorItem {
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.vectorLabel {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.58rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.vectorVal {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #00ff88;
+}
+
+/* Plan Trigger Controls */
+.controlGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.buttonGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.consoleBtn {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+  user-select: none;
+}
+
+.consoleBtn:hover {
+  background: rgba(0, 212, 255, 0.06);
+  border-color: rgba(0, 212, 255, 0.3);
+  color: #00d4ff;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.08);
+}
+
+.consoleBtnActive {
+  background: rgba(0, 212, 255, 0.12) !important;
+  border-color: rgba(0, 212, 255, 0.6) !important;
+  color: #00d4ff !important;
+  box-shadow: 
+    0 0 15px rgba(0, 212, 255, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* Center 3D WebGL Canvas Panel */
+.canvasPanel {
+  position: relative;
+  background: radial-gradient(circle at center, rgba(16, 16, 24, 0.5) 0%, rgba(8, 8, 12, 0.95) 100%);
+  border: 1px solid rgba(0, 212, 255, 0.12);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 
+    0 20px 40px -15px rgba(0, 0, 0, 0.7),
+    0 0 35px rgba(0, 212, 255, 0.05),
+    inset 0 0 40px rgba(0, 212, 255, 0.03);
+}
+
+.splineContainer {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.splineContainer spline-viewer {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* CAD HUD Overlays */
+.canvasHUD {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.canvasLabel {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  color: rgba(0, 212, 255, 0.75);
+  background: rgba(10, 10, 15, 0.75);
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+/* Crosshair Reticle Center */
+.hudCrosshair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  border: 1.2px solid rgba(0, 212, 255, 0.12);
+  border-radius: 50%;
+}
+
+.hudCrosshair::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -6px;
+  right: -6px;
+  height: 1px;
+  background-color: rgba(0, 212, 255, 0.1);
+}
+
+.hudCrosshair::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: -6px;
+  bottom: -6px;
+  width: 1px;
+  background-color: rgba(0, 212, 255, 0.1);
+}
+
+/* HUD Corners indicators */
+.hudCornerTR, .hudCornerTL, .hudCornerBR, .hudCornerBL {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid rgba(0, 212, 255, 0.25);
+}
+
+.hudCornerTL { top: 16px; left: 16px; border-right: none; border-bottom: none; }
+.hudCornerTR { top: 16px; right: 16px; border-left: none; border-bottom: none; }
+.hudCornerBL { bottom: 16px; left: 16px; border-right: none; border-top: none; }
+.hudCornerBR { bottom: 16px; right: 16px; border-left: none; border-top: none; }
+
+/* Right Terminal Console Body */
+.terminalBody {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #060608;
+  overflow: hidden;
+}
+
+.logWrapper {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-right: 4px;
+}
+
+/* Custom Scrollbar for terminal logs */
+.logWrapper::-webkit-scrollbar {
+  width: 4px;
+}
+
+.logWrapper::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.logWrapper::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+}
+
+.logRow {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.65rem;
+  line-height: 1.4;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.logTick {
+  user-select: none;
+  font-weight: bold;
+}
+
+.logText {
+  flex: 1;
+}
+
+/* Log Color Mappings */
+.logInfo {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.logInfo .logTick {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.logSystem {
+  color: #00ff88; /* Emerald green */
+}
+
+.logSystem .logTick {
+  color: #00ff88;
+}
+
+.logWarn {
+  color: #ff9a3c; /* warm amber warnings */
+  animation: alarmBlink 1.5s infinite alternate;
+}
+
+.logWarn .logTick {
+  color: #ff9a3c;
+}
+
+.logCommand {
+  color: #00d4ff; /* Command input cyan */
+}
+
+.logCommand .logTick {
+  color: #00d4ff;
+}
+
+@keyframes alarmBlink {
+  0% { opacity: 0.75; }
+  100% { opacity: 1; text-shadow: 0 0 4px rgba(255, 154, 60, 0.3); }
+}
+
+/* Bottom Telemetry HUD indicators inside terminal */
+.terminalIndicatorGroup {
+  height: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 12px;
+  padding-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.terminalIndicatorItem {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.6rem;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}

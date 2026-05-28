@@ -1,0 +1,409 @@
+/* E:\portfolio_site\src\app\projects\[id]\ProjectDetails.module.css */
+
+.mainContainer {
+  position: relative;
+  min-height: 100vh;
+  background-color: transparent; /* show stars */
+  color: #ffffff;
+  padding: 2rem 8% 8rem 8%;
+  z-index: 5;
+  font-family: var(--font-sans), sans-serif;
+}
+
+/* Header bar */
+.detailHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.backBtn {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.backBtn:hover {
+  background: rgba(0, 212, 255, 0.08);
+  border-color: rgba(0, 212, 255, 0.3);
+  color: #00d4ff;
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.1);
+}
+
+.projectCategory {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #ff9a3c;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 154, 60, 0.05);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 154, 60, 0.12);
+}
+
+.pulsarDot {
+  width: 6px;
+  height: 6px;
+  background-color: #ff9a3c;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #ff9a3c;
+  animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 0.4; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Loader Screen */
+.loaderContainer {
+  width: 100vw;
+  height: 100vh;
+  background-color: #0a0a0f;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 2px solid rgba(0, 212, 255, 0.1);
+  border-top-color: #00d4ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.1);
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+.loaderText {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: #00d4ff;
+}
+
+/* Dashboard grid */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  width: 100%;
+}
+
+@media (max-width: 968px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.leftCol, .rightCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Showcase Media Card */
+.mediaCard {
+  position: relative;
+  width: 100%;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background-color: rgba(10, 10, 15, 0.65);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.videoPlayer {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+
+/* CAD HUD overlays on video */
+.hudOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.hudCornerTL, .hudCornerTR, .hudCornerBL, .hudCornerBR {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid rgba(0, 212, 255, 0.4);
+}
+.hudCornerTL { top: 12px; left: 12px; border-right: none; border-bottom: none; }
+.hudCornerTR { top: 12px; right: 12px; border-left: none; border-bottom: none; }
+.hudCornerBL { bottom: 12px; left: 12px; border-right: none; border-top: none; }
+.hudCornerBR { bottom: 12px; right: 12px; border-left: none; border-top: none; }
+
+.hudLabel {
+  position: absolute;
+  top: 12px;
+  left: 30px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  color: #00d4ff;
+  background: rgba(10, 10, 15, 0.8);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* Glassy generic container card styling */
+.specsCard, .descriptionCard, .timelineCard, .gitCard {
+  background: rgba(10, 10, 15, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  padding: 2rem;
+  box-shadow: 
+    0 15px 35px -10px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.cardTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.iconBlue { color: #00d4ff; filter: drop-shadow(0 0 4px rgba(0, 212, 255, 0.3)); }
+.iconAmber { color: #ff9a3c; filter: drop-shadow(0 0 4px rgba(255, 154, 60, 0.3)); }
+.iconGreen { color: #00ff88; filter: drop-shadow(0 0 4px rgba(0, 255, 136, 0.3)); }
+
+.cardHeader {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+/* Specs layout */
+.specsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.specRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.specName {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.specDot {
+  flex: 1;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.08);
+  margin: 0 12px;
+}
+
+.specValue {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #00d4ff;
+}
+
+/* Project Description */
+.projectTitle {
+  font-family: var(--font-title), sans-serif;
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+}
+
+.projectDescriptionText {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 2rem;
+}
+
+.actionRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.actionLink {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #00d4ff;
+  color: #050508;
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid transparent;
+  user-select: none;
+}
+
+.actionLink:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 212, 255, 0.35);
+}
+
+.actionLinkAlt {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: rgba(255, 255, 255, 0.85) !important;
+  box-shadow: none !important;
+}
+
+.actionLinkAlt:hover {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Timeline Layout */
+.timelineList {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 8px;
+}
+
+.timelineItem {
+  display: flex;
+  gap: 20px;
+  position: relative;
+  padding-bottom: 24px;
+}
+
+.timelineItem:last-child {
+  padding-bottom: 0;
+}
+
+.timelinePoint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.pointDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ff9a3c;
+  box-shadow: 0 0 8px #ff9a3c;
+  z-index: 2;
+}
+
+.pointLine {
+  width: 1px;
+  flex: 1;
+  background: rgba(255, 154, 60, 0.15);
+  margin-top: 6px;
+  z-index: 1;
+}
+
+.timelineItem:last-child .pointLine {
+  display: none;
+}
+
+.timelineContent {
+  flex: 1;
+  margin-top: -3px;
+}
+
+.phaseTitle {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #ff9a3c;
+  margin-top: 0;
+  margin-bottom: 6px;
+}
+
+.phaseDesc {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+/* Git Commit Feed */
+.commitFeed {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #060608;
+  border-radius: 10px;
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.commitRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.65rem;
+  line-height: 1.4;
+}
+
+.commitDate {
+  color: rgba(255, 255, 255, 0.35);
+  user-select: none;
+}
+
+.commitText {
+  color: #00ff88;
+  flex: 1;
+}

@@ -1,0 +1,247 @@
+/* E:\portfolio_site\src\components\FiverrGigs.module.css */
+
+.sectionContainer {
+  position: relative;
+  background-color: transparent; /* transparent to show starry background */
+  padding: 8rem 8% 8rem 8%;
+  z-index: 4;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.sectionHeader {
+  margin-bottom: 4rem;
+}
+
+.subtitleCode {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: #1dbf73; /* Fiverr green brand accent */
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.titleLarge {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Grids layout */
+.gigsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.cardContainer {
+  perspective: 1000px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Gig Card */
+.gigCard {
+  flex: 1;
+  width: 100%;
+  background: rgba(10, 10, 15, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  box-shadow: 
+    0 15px 35px -10px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gigCard:hover {
+  border-color: #1dbf73;
+  box-shadow: 
+    0 15px 40px -10px rgba(0, 0, 0, 0.6),
+    0 0 25px rgba(29, 191, 115, 0.12);
+}
+
+/* Card Header */
+.gigHeader {
+  height: 44px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 0 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ratingBox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.ratingValue {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 1px;
+}
+
+.reviewCount {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.62rem;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.activePulse {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #1dbf73;
+  background: rgba(29, 191, 115, 0.06);
+  padding: 2px 8px;
+  border-radius: 20px;
+  border: 1px solid rgba(29, 191, 115, 0.15);
+}
+
+.pulseIcon {
+  animation: alarmPulse 1.8s infinite alternate;
+}
+
+@keyframes alarmPulse {
+  0% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+/* Card Body */
+.gigBody {
+  padding: 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gigTitle {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #ffffff;
+  margin: 0;
+}
+
+.gigDesc {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0;
+}
+
+.bulletList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.06);
+  padding-top: 16px;
+}
+
+.bulletRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.checkIcon {
+  color: #1dbf73;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.bulletText {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Card Footer */
+.gigFooter {
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.01);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detailsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.deliveryInfo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.priceInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.priceLabel {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.58rem;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.priceValue {
+  font-family: var(--font-mono, monospace);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1dbf73;
+}
+
+/* Fiverr Button */
+.fiverrBtn {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #1dbf73;
+  color: #050508;
+  padding: 11px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(29, 191, 115, 0.15);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.fiverrBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 18px rgba(29, 191, 115, 0.35),
+    0 0 15px rgba(29, 191, 115, 0.2);
+}

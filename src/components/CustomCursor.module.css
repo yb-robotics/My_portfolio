@@ -1,0 +1,146 @@
+/* E:\portfolio_site\src\components\CustomCursor.module.css */
+
+.cursorRing {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 42px;
+  height: 42px;
+  margin-top: -21px;
+  margin-left: -21px;
+  border: 1.5px solid rgba(0, 212, 255, 0.45);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.05);
+  opacity: 0;
+  /* Smoothed GPU-accelerated translation follow lag, and sizing transitions */
+  transition: 
+    transform 0.08s cubic-bezier(0.25, 1, 0.5, 1),
+    width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    margin-top 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    margin-left 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    opacity 0.2s ease;
+  will-change: transform, width, height, margin-top, margin-left;
+}
+
+.cursorRingHovered {
+  width: 64px;
+  height: 64px;
+  margin-top: -32px;
+  margin-left: -32px;
+  border-color: rgba(255, 154, 60, 0.85); /* Amber hover state */
+  background-color: rgba(255, 154, 60, 0.04);
+  box-shadow: 0 0 18px rgba(255, 154, 60, 0.2);
+}
+
+.cursorDot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  margin-top: -2.5px;
+  margin-left: -2.5px;
+  background-color: #00d4ff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10001;
+  opacity: 0;
+  transition: 
+    width 0.3s ease, 
+    height 0.3s ease,
+    margin-top 0.3s ease,
+    margin-left 0.3s ease,
+    background-color 0.3s ease,
+    opacity 0.2s ease;
+  will-change: transform;
+}
+
+.cursorDotHovered {
+  width: 7px;
+  height: 7px;
+  margin-top: -3.5px;
+  margin-left: -3.5px;
+  background-color: #ff9a3c;
+  box-shadow: 0 0 10px #ff9a3c;
+}
+
+/* Custom Robotics Targeting Reticle Ticks */
+.reticleTickTop,
+.reticleTickBottom,
+.reticleTickLeft,
+.reticleTickRight {
+  position: absolute;
+  background-color: rgba(0, 212, 255, 0.6);
+  transition: background-color 0.3s ease;
+}
+
+.cursorRingHovered .reticleTickTop,
+.cursorRingHovered .reticleTickBottom,
+.cursorRingHovered .reticleTickLeft,
+.cursorRingHovered .reticleTickRight {
+  background-color: rgba(255, 154, 60, 0.85);
+}
+
+.reticleTickTop {
+  top: -5px;
+  left: calc(50% - 0.5px);
+  width: 1px;
+  height: 4px;
+}
+
+.reticleTickBottom {
+  bottom: -5px;
+  left: calc(50% - 0.5px);
+  width: 1px;
+  height: 4px;
+}
+
+.reticleTickLeft {
+  left: -5px;
+  top: calc(50% - 0.5px);
+  height: 1px;
+  width: 4px;
+}
+
+.reticleTickRight {
+  right: -5px;
+  top: calc(50% - 0.5px);
+  height: 1px;
+  width: 4px;
+}
+
+/* Dashboard Dashed Rotating Inner Ring */
+.innerDashedCircle {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  border: 1px dashed rgba(0, 212, 255, 0.15);
+  border-radius: 50%;
+  animation: rotateDashed 12s linear infinite;
+  transition: border-color 0.3s ease;
+}
+
+.cursorRingHovered .innerDashedCircle {
+  border-color: rgba(255, 154, 60, 0.25);
+  animation: rotateDashed 6s linear infinite;
+}
+
+@keyframes rotateDashed {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Suppress cursor styling for touchscreens */
+@media (pointer: coarse) {
+  .cursorRing,
+  .cursorDot {
+    display: none !important;
+  }
+}

@@ -1,0 +1,194 @@
+/* E:\portfolio_site\src\components\Skills.module.css */
+
+.sectionContainer {
+  position: relative;
+  background-color: #0a0a0f;
+  padding: 8rem 8% 8rem 8%;
+  z-index: 4;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.sectionHeader {
+  margin-bottom: 4rem;
+}
+
+.subtitleCode {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: #ff9a3c; /* Amber subtitle */
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.titleLarge {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0;
+}
+
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.categoryCard {
+  position: relative;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 20px;
+  padding: 2.2rem;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.categoryCard:hover {
+  background: rgba(255, 255, 255, 0.02);
+  transform: translateY(-4px);
+}
+
+/* Oscilloscope waveform background */
+.oscilloscopeBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.06;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 1;
+}
+
+.categoryTitle {
+  font-family: var(--font-mono, monospace);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.categoryDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Color thematic styles */
+.catSoftware .categoryDot {
+  background-color: #00ff88;
+  box-shadow: 0 0 8px #00ff88;
+}
+.catSoftware:hover {
+  border-color: rgba(0, 255, 136, 0.3);
+}
+
+.catHardware .categoryDot {
+  background-color: #ff9a3c;
+  box-shadow: 0 0 8px #ff9a3c;
+}
+.catHardware:hover {
+  border-color: rgba(255, 154, 60, 0.3);
+}
+
+.catControl .categoryDot {
+  background-color: #00d4ff;
+  box-shadow: 0 0 8px #00d4ff;
+}
+.catControl:hover {
+  border-color: rgba(0, 212, 255, 0.3);
+}
+
+.skillsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.skillItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skillMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.76rem;
+  letter-spacing: 0.02em;
+}
+
+.skillName {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.skillValue {
+  font-weight: 700;
+}
+
+.catSoftware .skillValue { color: #00ff88; }
+.catHardware .skillValue { color: #ff9a3c; }
+.catControl .skillValue { color: #00d4ff; }
+
+/* Dynamic progress track */
+.track {
+  width: 100%;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bar {
+  height: 100%;
+  border-radius: 2px;
+  width: 0%; /* Animates dynamically */
+  position: relative;
+}
+
+.catSoftware .bar {
+  background: linear-gradient(90deg, rgba(0, 255, 136, 0.2), #00ff88);
+  box-shadow: 0 0 8px rgba(0, 255, 136, 0.4);
+}
+
+.catHardware .bar {
+  background: linear-gradient(90deg, rgba(255, 154, 60, 0.2), #ff9a3c);
+  box-shadow: 0 0 8px rgba(255, 154, 60, 0.4);
+}
+
+.catControl .bar {
+  background: linear-gradient(90deg, rgba(0, 212, 255, 0.2), #00d4ff);
+  box-shadow: 0 0 8px rgba(0, 212, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+  .sectionContainer {
+    padding: 6rem 6% 6rem 6%;
+  }
+
+  .titleLarge {
+    font-size: 2.2rem;
+  }
+
+  .categories {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}

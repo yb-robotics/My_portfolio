@@ -1,0 +1,404 @@
+/* E:\portfolio_site\src\components\Contact.module.css */
+
+.sectionContainer {
+  position: relative;
+  background-color: transparent; /* transparent to show stars */
+  padding: 8rem 8% 8rem 8%;
+  z-index: 4;
+  border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.sectionHeader {
+  margin-bottom: 4rem;
+}
+
+.subtitleCode {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: #00d4ff; /* Electric blue */
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.titleLarge {
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Console Grid layout */
+.consoleGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 868px) {
+  .consoleGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+/* Panel frames */
+.transceiverPanel, .formPanel {
+  background: rgba(10, 10, 15, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 
+    0 15px 35px -10px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  min-height: 400px;
+}
+
+.panelHeader {
+  height: 48px;
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pulseIcon {
+  color: #00d4ff;
+  animation: radarBlink 1.5s infinite alternate;
+}
+
+@keyframes radarBlink {
+  0% { opacity: 0.4; }
+  100% { opacity: 1; filter: drop-shadow(0 0 4px #00d4ff); }
+}
+
+.panelTitle {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.panelBody {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex: 1;
+}
+
+/* Oscilloscope Container */
+.oscilloscopeContainer {
+  background: #060608;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.oscLabel {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.oscCanvas {
+  width: 100%;
+  height: 100px;
+  background: #040406;
+  border-radius: 6px;
+  display: block;
+}
+
+/* Diagnostic Telemetry */
+.telemetryReadout {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px dashed rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.telemetryRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.telLabel {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.telVal, .telValCyan, .telValAmber, .telValGreen {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 600;
+}
+
+.telVal { color: #ffffff; }
+.telValCyan { color: #00d4ff; }
+.telValAmber { color: #ff9a3c; }
+.telValGreen { color: #00ff88; }
+
+/* Signal widgets */
+.signalStatus {
+  background: rgba(0, 212, 255, 0.05);
+  border: 1px solid rgba(0, 212, 255, 0.12);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.wifiIcon {
+  color: #00d4ff;
+  filter: drop-shadow(0 0 4px rgba(0, 212, 255, 0.4));
+  animation: antennaPulse 1s infinite alternate;
+}
+
+@keyframes antennaPulse {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  100% { transform: scale(1.1); opacity: 1; }
+}
+
+.signalLabelColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.signalBig {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #00d4ff;
+  letter-spacing: 0.05em;
+}
+
+.signalSub {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.55rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Form inputs styling */
+.form {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputLabel {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.inputField, .textareaField {
+  font-family: var(--font-sans), sans-serif;
+  font-size: 0.85rem;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  padding: 12px 14px;
+  outline: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.textareaField {
+  resize: none;
+}
+
+.inputFieldFocused, .textareaFieldFocused {
+  background: rgba(0, 212, 255, 0.02);
+  border-color: #00d4ff;
+  box-shadow: 
+    0 0 15px rgba(0, 212, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+/* Transmit Button */
+.submitButton {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-top: auto;
+  padding: 12px;
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  border-radius: 8px;
+  color: #00d4ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.submitButton:hover {
+  background: #00d4ff;
+  color: #050508;
+  box-shadow: 
+    0 4px 15px rgba(0, 212, 255, 0.3),
+    0 0 10px rgba(0, 212, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+/* Transmission Progress screen */
+.transmissionScreen {
+  padding: 30px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transmittingState {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.transmittingText {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #ff9a3c;
+}
+
+.progressBarTrack {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 3px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.progressBarFill {
+  height: 100%;
+  background: linear-gradient(90deg, #ff9a3c, #ff5500);
+  box-shadow: 0 0 10px rgba(255, 154, 60, 0.5);
+  border-radius: 3px;
+}
+
+.transmittingTerminal {
+  background: #060608;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  padding: 14px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.62rem;
+  color: rgba(255, 255, 255, 0.55);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 120px;
+}
+
+/* Success display */
+.successState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  max-width: 420px;
+}
+
+.successIcon {
+  color: #00ff88;
+  filter: drop-shadow(0 0 8px rgba(0, 255, 136, 0.3));
+}
+
+.successTitle {
+  font-family: var(--font-title), sans-serif;
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  margin: 0;
+}
+
+.successDesc {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+}
+
+.successDiagnostic {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 255, 136, 0.06);
+  border: 1px solid rgba(0, 255, 136, 0.15);
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.checkIconGreen {
+  color: #00ff88;
+}
+
+.diagnosticText {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: #00ff88;
+}
+
+.backBtn {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.85);
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+  user-select: none;
+}
+
+.backBtn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
