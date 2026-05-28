@@ -126,22 +126,6 @@ export default function VideoIntro() {
     return () => clearInterval(interval);
   }, []);
 
-  // Explicitly trigger autoplay on mount for reliable execution across strict browsers
-  useEffect(() => {
-    if (fgVideoRef.current) {
-      fgVideoRef.current.muted = true;
-      fgVideoRef.current.play().catch(err => {
-        console.log("Foreground video autoplay prevented:", err);
-      });
-    }
-    if (bgVideoRef.current) {
-      bgVideoRef.current.muted = true;
-      bgVideoRef.current.play().catch(err => {
-        console.log("Background video autoplay prevented:", err);
-      });
-    }
-  }, []);
-
   // Sync play states
   const togglePlay = () => {
     const nextPlaying = !isPlaying;
@@ -224,7 +208,6 @@ export default function VideoIntro() {
           autoPlay
           loop
           muted={isMuted}
-          defaultMuted
           playsInline
           onTimeUpdate={handleTimeUpdate}
         />
