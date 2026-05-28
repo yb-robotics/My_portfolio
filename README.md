@@ -5,7 +5,6 @@
 
 *Building intelligent machines that interact with the physical world.*
 
-[![GitHub](https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yb-robotics)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yash-bansal-77644b318/)
 [![Email](https://img.shields.io/badge/Email-Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:work.yashbansal5@gmail.com)
 [![Portfolio](https://img.shields.io/badge/Portfolio-Live_Site-00D4FF?style=for-the-badge&logo=react&logoColor=black)](https://github.com/yb-robotics/My_portfolio)
