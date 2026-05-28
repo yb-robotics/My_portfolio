@@ -40,13 +40,13 @@ export default function Footer() {
 
       {/* 2. Social Links */}
       <div className={styles.linksContainer}>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer" className={styles.linkItem}>
+        <a href="https://github.com/yb-robotics" target="_blank" rel="noopener noreferrer" className={styles.linkItem}>
           // GITHUB
         </a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.linkItem}>
+        <a href="https://www.linkedin.com/in/yash-bansal-77644b318/" target="_blank" rel="noopener noreferrer" className={styles.linkItem}>
           // LINKEDIN
         </a>
-        <a href="mailto:yash@example.com" className={styles.linkItem}>
+        <a href="mailto:work.yashbansal5@gmail.com" target="_blank" rel="noopener noreferrer" className={styles.linkItem}>
           // EMAIL
         </a>
         
