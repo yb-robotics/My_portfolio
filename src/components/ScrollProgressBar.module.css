@@ -1,0 +1,13 @@
+.progressBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  z-index: 9999;
+  background: linear-gradient(90deg, #00BFFF 0%, #00FFFF 50%, #FFA500 100%);
+  background-size: 100vw 2px;
+  background-attachment: fixed;
+  pointer-events: none;
+  transition: width 0.05s linear; /* extremely subtle smoothing for high refresh rate */
+}

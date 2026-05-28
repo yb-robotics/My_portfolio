@@ -3,6 +3,7 @@ import Script from "next/script";
 import CustomCursor from "@/components/CustomCursor";
 import StarfieldBackground from "@/components/StarfieldBackground";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
 import "./globals.css";
 
 const titleFont = Orbitron({
@@ -48,6 +49,7 @@ export default function RootLayout({ children }) {
         }}
       >
         <SmoothScrollProvider>
+          <ScrollProgressBar />
           <StarfieldBackground />
           <CustomCursor />
           {children}
